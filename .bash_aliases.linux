@@ -1,0 +1,9 @@
+# Open files/folders.
+alias open='xdg-open'
+
+# Open code.
+alias code='/var/lib/flatpak/exports/bin/com.visualstudio.code.oss'
+
+# Update the whole system.
+alias up='sudo dnf update --refresh && sudo dnf autoremove && flatpak update && flatpak remove --unused'
+

@@ -1,0 +1,7 @@
+function cpuspeed() {
+	cat /proc/cpuinfo | awk '/cpu MHz\s+:\s/{print $(NF)}' | sort -nr | head -n1
+}
+
+function gitg() {
+	(nohup /var/lib/flatpak/exports/bin/org.gnome.gitg "$@" >/dev/null 2>&1 &)
+}
