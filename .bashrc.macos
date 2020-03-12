@@ -1,0 +1,11 @@
+# iTerm2 shell integration.
+[ -f ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
+
+# Use Java 8 by default.
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# Add /usr/local/sbin to the path.
+export PATH="$PATH:/usr/local/sbin"
+
+# Add Homebrew's ruby to the path.
+export PATH="/usr/local/opt/ruby/bin:$PATH"

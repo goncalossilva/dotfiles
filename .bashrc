@@ -1,6 +1,16 @@
 # Source global definitions.
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+# Source platform definitions.
+case `uname -s` in
+  Linux*)
+  [ -f ~/.bashrc.linux ] && . ~/.bashrc.linux
+  ;;
+  Darwin*)
+  [ -f ~/.bashrc.macos ] && . ~/.bashrc.macos
+  ;;
+esac
+
 # Source aliases, functions and autocompletions.
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bash_functions ] && . ~/.bash_functions
