@@ -10,7 +10,7 @@ Nothing is assumed to be installed, but the following are sourced if present:
 
 # Setup
 
-1. `git clone --bare https://github.com/goncalossilva/dotfiles.git ~/.dotfiles`
+1. `git clone --bare git@github.com:goncalossilva/dotfiles.git ~/.dotfiles`
 2. Source `~/.bashrc` or reload the shell
 3. `dotfiles config status.showUntrackedFiles no`
 
