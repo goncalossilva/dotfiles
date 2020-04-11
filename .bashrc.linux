@@ -1,0 +1,2 @@
+# Bash auto cd.
+shopt -s autocd
