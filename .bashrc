@@ -1,5 +1,9 @@
+source_if_exists() {
+  [ -f $1 ] && . $1
+}
+
 # Source global definitions.
-[ -f /etc/bashrc ] && . /etc/bashrc
+source_if_exists /etc/bashrc
 
 # Source platform definitions.
 case `uname -s` in
@@ -12,23 +16,23 @@ case `uname -s` in
 esac
 
 # Source aliases, functions and autocompletions.
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
-[ -f ~/.bash_functions ] && . ~/.bash_functions
+source_if_exists $HOME/.bash_aliases
+source_if_exists $HOME/.bash_functions
 case `uname -s` in
   Linux*)
-  [ -f ~/.bash_aliases.linux ] && . ~/.bash_aliases.linux
-  [ -f ~/.bash_functions.linux ] && . ~/.bash_functions.linux
+  source_if_exists $HOME/.bash_aliases.linux
+  source_if_exists $HOME/.bash_functions.linux
   ;;
   Darwin*)
-  [ -f ~/.bash_aliases.macos ] && . ~/.bash_aliases.macos
-  [ -f ~/.bash_functions.macos ] && . ~/.bash_functions.macos
+  source_if_exists $HOME/.bash_aliases.macos
+  source_if_exists $HOME/.bash_functions.macos
   ;;
 esac
 for f in ~/.bash_autocompletions/*; do . $f; done
 
 # Source z, fzf, and combine them.
-[ -f ~/.z.sh ] && . ~/.z.sh
-[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+source_if_exists $HOME/.z.sh
+source_if_exists $HOME/.fzf.bash
 if [ type "z" &> /dev/null ] && [ type "fzf" &> /dev/null ]; then
   unalias z 2> /dev/null
   function z() {
