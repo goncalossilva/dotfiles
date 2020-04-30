@@ -68,6 +68,3 @@ complete -cf killall
 
 # Editor.
 EDITOR='vi'
-
-# Environment variables.
-export GOPATH=$HOME/.go
