@@ -41,6 +41,11 @@ if [ type "z" &> /dev/null ] && [ type "fzf" &> /dev/null ]; then
   }
 fi
 
+# Source and setup asdf.
+source_if_exists $HOME/.asdf/asdf.sh
+source_if_exists $HOME/.asdf/completions/asdf.bash
+source_if_exists $HOME/.asdf/plugins/java/asdf-java-wrapper.bash
+
 # Comand prompt.
 PS1='\[\033[01;34m\]\w \$\[\033[00m\] '
 if [ $(type -t __git_ps1) ]; then

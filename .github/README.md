@@ -7,6 +7,7 @@ This repo contains my dotfiles, used across Linux and macOS.
 Nothing is assumed to be installed, but the following are sourced if present:
 * [rupa/z](https://github.com/rupa/z) from `~/.z.sh`
 * [junegunn/fzf](https://github.com/junegunn/fzf) from `~/.fzf.bash`
+* [asdf-vm/asdf](https://github.com/asdf-vm/asdf) and completions from the default locations
 
 # Setup
 
