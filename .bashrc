@@ -50,7 +50,7 @@ if [ $(type -t __git_ps1) ]; then
   PS1='\[\033[01;34m\]\w\[\033[0;37m\]$(__git_ps1 "(%s)") \[\033[01;34m\]\$\[\033[00m\] '
 fi
 if [ -f /run/.containerenv ] && [ -f /run/.toolboxenv ]; then
-  PS1=$(printf "\033[35m⬢\033[0m%s" " $PS1")
+  PS1="\[\033[35m\]⬢\[\033[0m\] $PS1"
 fi
 
 # Bash history.
