@@ -1,9 +1,9 @@
-function findlocal() {
-	find $@ ! -fstype nfs
+findlocal() {
+  find $@ ! -fstype nfs
 }
 
-function srt() {
-	conda activate subliminal
-	subliminal download -l en $1
-	conda deactivate
+srt() {
+  conda activate subliminal
+  subliminal download -l en $1
+  conda deactivate
 }
