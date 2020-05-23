@@ -1,6 +1,9 @@
 # Open files/folders.
 alias open='xdg-open'
 
+# Prefer vi with xterm clipboard support.
+command -v vimx >/dev/null 2>&1 && alias vim='vimx' && alias vi='vimx'
+
 # Open steam in a new X server (better performance, alt+tab, etc).
 alias steam='xinit /var/lib/flatpak/exports/bin/com.valvesoftware.Steam -- :1 vt$XDG_VTNR'
 
