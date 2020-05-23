@@ -72,4 +72,5 @@ complete -cf sudo
 complete -cf killall
 
 # Editor.
-EDITOR='vi'
+EDITOR='vi -e'
+VISUAL='vi'
