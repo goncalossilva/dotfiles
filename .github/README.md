@@ -9,6 +9,10 @@ Nothing is assumed to be installed, but the following are sourced if present:
 * [junegunn/fzf](https://github.com/junegunn/fzf) from `~/.fzf.bash`
 * [asdf-vm/asdf](https://github.com/asdf-vm/asdf) and completions from the default locations
 
+# Vim
+
+My vimrc is kept in another repo: [goncalossilva/vimrc](https://github.com/goncalossilva/vimrc).
+
 # Setup
 
 1. `git clone --bare git@github.com:goncalossilva/dotfiles.git ~/.dotfiles`
