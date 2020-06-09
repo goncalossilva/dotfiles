@@ -6,11 +6,11 @@ source_if_exists() {
 source_if_exists /etc/bashrc
 
 # Source platform definitions.
-case `uname -s` in
-  Linux*)
+case $(uname -s) in
+Linux*)
   [ -f ~/.bashrc.linux ] && . ~/.bashrc.linux
   ;;
-  Darwin*)
+Darwin*)
   [ -f ~/.bashrc.macos ] && . ~/.bashrc.macos
   ;;
 esac
@@ -18,12 +18,12 @@ esac
 # Source aliases, functions and autocompletions.
 source_if_exists $HOME/.bash_aliases
 source_if_exists $HOME/.bash_functions
-case `uname -s` in
-  Linux*)
+case $(uname -s) in
+Linux*)
   source_if_exists $HOME/.bash_aliases.linux
   source_if_exists $HOME/.bash_functions.linux
   ;;
-  Darwin*)
+Darwin*)
   source_if_exists $HOME/.bash_aliases.macos
   source_if_exists $HOME/.bash_functions.macos
   ;;
@@ -33,8 +33,8 @@ for f in ~/.bash_autocompletions/*; do . $f; done
 # Source z, fzf, and combine them.
 source_if_exists $HOME/.z.sh
 source_if_exists $HOME/.fzf.bash
-if [ type "z" &> /dev/null ] && [ type "fzf" &> /dev/null ]; then
-  unalias z 2> /dev/null
+if [ type "z" ] &>/dev/null && [ type "fzf" ] &>/dev/null; then
+  unalias z 2>/dev/null
   function z() {
     [ $# -gt 0 ] && _z "$*" && return
     cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
@@ -44,6 +44,8 @@ fi
 # Source and setup asdf.
 source_if_exists $HOME/.asdf/asdf.sh
 source_if_exists $HOME/.asdf/completions/asdf.bash
+# REMOVE THIS: https://github.com/halcyon/asdf-java/issues/91
+export PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND} :}"
 source_if_exists $HOME/.asdf/plugins/java/set-java-home.bash
 
 # Comand prompt.
