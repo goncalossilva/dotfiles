@@ -5,7 +5,7 @@ alias open='xdg-open'
 command -v vimx >/dev/null 2>&1 && alias vim='vimx' && alias vi='vimx'
 
 # Open steam in a new X server (better performance, alt+tab, etc).
-alias steam='xinit /var/lib/flatpak/exports/bin/com.valvesoftware.Steam -- :1 vt$XDG_VTNR'
+alias steam='xinit /var/lib/flatpak/exports/bin/com.valvesoftware.Steam -- :2 vt$XDG_VTNR'
 
 # Update the whole system.
 alias up='sudo dnf update --refresh && sudo dnf autoremove && flatpak update && flatpak remove --unused'

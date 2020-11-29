@@ -63,7 +63,7 @@ fi
 # Bash history.
 shopt -s histappend
 shopt -s cmdhist
-HISTSIZE=100000
+HISTSIZE=1000000
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:bg:fg:history'
 HISTTIMEFORMAT='%F %T '
