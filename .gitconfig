@@ -3,7 +3,7 @@
     email = goncalossilva@gmail.com
 [core]
     ignorecase = true
-    editor = "vi"
+    editor = "vim"
 [push]
     default = current
 [submodule]
@@ -49,3 +49,9 @@
         git push origin :refs/tags/$1 && \
         git push --tags; \
     }; f"
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
+[pull]
+	ff = only
