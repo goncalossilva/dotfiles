@@ -1,11 +1,14 @@
 [user]
     name = Gonçalo Silva
     email = goncalossilva@gmail.com
+    signingkey = FCE7261799167E4B
 [core]
     ignorecase = true
     editor = "vim"
 [init]
     defaultBranch = main
+[commit]
+    gpgsign = true
 [pull]
     ff = only
 [push]
