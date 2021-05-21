@@ -30,13 +30,13 @@
     helper = osxkeychain
 [alias]
     autoremove = "!f() { \
-        whitelist=\"master|dev|legacy\"; \
+        keeplist=\"master|main|dev|legacy\"; \
         git fetch --prune; \
         if [ -z \"$1\" ]; then \
-            list=$(git branch --merged | egrep -v \"(^\\*|$whitelist)\") && \
+            list=$(git branch --merged | egrep -v \"(^\\*|$keeplist)\") && \
             cmd='echo \"$list\" | xargs -n 1 git branch -d'; \
         else \
-            list=$(git branch -r --merged | grep \"$1\" | egrep -v \"(>|$whitelist)\") && \
+            list=$(git branch -r --merged | grep \"$1\" | egrep -v \"(>|$keeplist)\") && \
             cmd='echo \"$list\" | cut -d'/' -f2- | xargs -n 1 git push \"$1\" --delete'; \
         fi; \
         echo \"On branch $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'). \"; echo \"\"; \
