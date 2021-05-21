@@ -44,8 +44,6 @@ fi
 # Source and setup asdf.
 source_if_exists $HOME/.asdf/asdf.sh
 source_if_exists $HOME/.asdf/completions/asdf.bash
-# REMOVE THIS: https://github.com/halcyon/asdf-java/issues/91
-export PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND} :}"
 source_if_exists $HOME/.asdf/plugins/java/set-java-home.bash
 
 # Comand prompt.
