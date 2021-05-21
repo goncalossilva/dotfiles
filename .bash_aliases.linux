@@ -1,12 +1,14 @@
 # Open files/folders.
 alias open='xdg-open'
 
-# Prefer vi with xterm clipboard support.
-command -v vimx >/dev/null 2>&1 && alias vim='vimx' && alias vi='vimx'
+# Update the whole system.
+alias up='sudo dnf update --refresh && sudo dnf autoremove && flatpak update && flatpak remove --unused'
 
 # Open steam in a new X server (better performance, alt+tab, etc).
 alias steam='xinit /var/lib/flatpak/exports/bin/com.valvesoftware.Steam -- :2 vt$XDG_VTNR'
 
-# Update the whole system.
-alias up='sudo dnf update --refresh && sudo dnf autoremove && flatpak update && flatpak remove --unused'
+# Prefer vi with xterm clipboard support.
+command -v vimx >/dev/null 2>&1 && alias vim='vimx' && alias vi='vimx'
 
+# VSCodium.
+alias codium="flatpak run com.vscodium.codium"
