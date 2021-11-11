@@ -15,9 +15,10 @@ My vimrc is kept in another repo: [goncalossilva/vimrc](https://github.com/gonca
 
 # Setup
 
-1. `git clone --bare git@github.com:goncalossilva/dotfiles.git ~/.dotfiles`
-2. Source `~/.bashrc` or reload the shell
-3. `dotfiles config status.showUntrackedFiles no`
+1. `git clone --separate-git-dir=$HOME/.dotfiles git@github.com:goncalossilva/dotfiles.git $HOME/dotfiles`
+2. `cp -r $HOME/dotfiles/. $HOME/ && rm -r $HOME/dotfiles/`
+3. Source `~/.bashrc` or reload the shell
+4. `dotfiles config status.showUntrackedFiles no`
 
 All done. To add something:
 
