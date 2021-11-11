@@ -5,6 +5,3 @@
 
 # Add /usr/local/sbin to the path.
 export PATH="$PATH:/usr/local/sbin"
-
-# Add Homebrew's ruby to the path.
-export PATH="/usr/local/opt/ruby/bin:$PATH"
