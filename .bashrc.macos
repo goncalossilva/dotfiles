@@ -2,6 +2,3 @@
 [ -f ~/.iterm2_shell_integration.bash ] && \
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES && \
   . ~/.iterm2_shell_integration.bash
-
-# Add /usr/local/sbin to the path.
-export PATH="$PATH:/usr/local/sbin"
