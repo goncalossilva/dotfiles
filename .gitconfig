@@ -33,27 +33,22 @@
     helper = /usr/libexec/git-core/git-credential-libsecret
     helper = osxkeychain
 [alias]
-    autoremove = "!f() { \
-        keeplist=\"master|main|dev|legacy\"; \
+    branchprune = "!f() { \
+        set -e; \
+        MAIN="${1:-main}"; \
         git fetch --prune; \
-        if [ -z \"$1\" ]; then \
-            list=$(git branch --merged | egrep -v \"(^\\*|$keeplist)\") && \
-            cmd='echo \"$list\" | xargs -n 1 git branch -d'; \
-        else \
-            list=$(git branch -r --merged | grep \"$1\" | egrep -v \"(>|$keeplist)\") && \
-            cmd='echo \"$list\" | cut -d'/' -f2- | xargs -n 1 git push \"$1\" --delete'; \
-        fi; \
-        echo \"On branch $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'). \"; echo \"\"; \
+        git checkout -q "$MAIN"; \
+        allbranches=$(git for-each-ref refs/heads/ \"--format=%(refname:short)\"); \
+        while IFS= read -r branch; do mergeBase=$(git merge-base \"$MAIN\" \"$branch\") && [[ $(git cherry \"$MAIN\" $(git commit-tree $(git rev-parse \"$branch^{tree}\") -p \"$mergeBase\" -m _)) == \"-\"* ]] && list=\"$list\\n$branch\"; done <<< \"$allbranches\"; \
+        cmd='echo \"$list\" | xargs -n 1 git branch -D'; \
         if [ -z \"$list\" ]; then \
             echo \"No branches to remove.\"; \
         else \
-            echo \"Branches to remove:\"; echo \"$list\"; echo \"\"; \
+            echo \"\nBranches to remove:$list\n\"; \
             read -p 'Press enter to continue'; echo \" \"; \
             eval $cmd; \
         fi \
     }; f"
-    autoremoveall = "!git remote | xargs -n 1 git autoremove; git autoremove"
-[alias]
     renametag = "!f() { \
         git tag $2 $1 && \
         git tag -d $1 && \
