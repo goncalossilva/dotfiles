@@ -1,6 +1,6 @@
 java temurin-17.0.0+35
 kotlin 1.6.10
-python 3.10.4
+python 3.9.13
 nodejs 16.13.2
 golang 1.17.3
 ruby 2.7.4
