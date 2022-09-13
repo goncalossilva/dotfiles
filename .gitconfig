@@ -56,3 +56,5 @@
         git push origin :refs/tags/$1 && \
         git push --tags; \
     }; f"
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
