@@ -1,12 +1,12 @@
 java temurin-17.0.0+35
 kotlin 1.6.10
-python 3.9.13
-nodejs 16.13.2
+python 3.11.7
+nodejs 18.13.0
 golang 1.17.3
 ruby 2.7.4
 elixir 1.12.3
 erlang 24.1.4
-rust 1.56.1
+rust 1.66.0
 maven 3.8.3
 dotnet-core 6.0.100
 
