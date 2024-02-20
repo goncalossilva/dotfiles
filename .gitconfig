@@ -8,19 +8,34 @@
     excludesfile = /home/goncalossilva/.gitignore_global
 [init]
     defaultBranch = main
-[commit]
-    gpgsign = true
-[pull]
-    ff = only
-[push]
-    default = current
+[fetch]
+    prune = true
+    pruneTags = true
 [submodule]
     fetchJobs = 4
     recurse = true
+[commit]
+    gpgsign = true
+[push]
+    autoSetupRemote = true
+    followTags = true
+[branch]
+    sort = committerdate
+[tag]
+    sort = taggerdate
+[status]
+    submoduleSummary = true
 [diff]
-    compactionHeuristic = true
-    submodule = diff
+    algorithm = histogram
     colorMoved = dimmed_zebra
+    colorMovedWS = allow-indentation-change
+    submodule = log
+[merge]
+    conflictstyle = zdiff3
+[rebase]
+    autosquash = true
+[rerere]
+    enabled = true
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     required = true
@@ -28,11 +43,10 @@
     process = git-lfs filter-process
 [remote "origin"]
     prune = true
-[merge]
-    tool = meld
 [credential]
     helper = /usr/libexec/git-core/git-credential-libsecret
     helper = osxkeychain
+    helper = cache
 [alias]
     branchprune = "!f() { \
         set -e; \
@@ -56,5 +70,3 @@
         git push origin :refs/tags/$1 && \
         git push --tags; \
     }; f"
-[blame]
-	ignoreRevsFile = .git-blame-ignore-revs
