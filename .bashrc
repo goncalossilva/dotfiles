@@ -61,9 +61,10 @@ fi
 # Bash history.
 shopt -s histappend
 shopt -s cmdhist
+shopt -s lithist
 HISTSIZE=1000000
 HISTCONTROL=ignoreboth
-HISTIGNORE='ls:bg:fg:history'
+HISTIGNORE='history:ls:l:pwd:exit:bg:fg'
 HISTTIMEFORMAT='%F %T '
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
