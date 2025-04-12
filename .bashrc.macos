@@ -1,3 +1,6 @@
+# Load Homebrew completions.
+for f in /opt/homebrew/etc/bash_completion.d/*; do . $f; done
+
 # iTerm2 shell integration.
 [ -f ~/.iterm2_shell_integration.bash ] && \
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES && \
