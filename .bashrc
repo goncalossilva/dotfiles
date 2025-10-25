@@ -42,7 +42,7 @@ if type z &> /dev/null && type fzf &> /dev/null; then
   unalias z 2> /dev/null
   function z() {
     [ $# -gt 0 ] && _z "$*" && return
-    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')" || exit
   }
 fi
 
@@ -54,9 +54,9 @@ source_if_exists "$HOME/.asdf/plugins/java/set-java-home.bash"
 # Comand prompt.
 PS1='\[\033[01;34m\]\w \$\[\033[00m\] '
 if [ "$(type -t __git_ps1)" ]; then
-  GIT_PS1_SHOWDIRTYSTATE=1
-  GIT_PS1_SHOWUNTRACKEDFILES=1
-  GIT_PS1_SHOWCOLORHINTS=1
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export GIT_PS1_SHOWUNTRACKEDFILES=1
+  export GIT_PS1_SHOWCOLORHINTS=1
   PS1='\[\033[01;34m\]\w\[\033[0;37m\]$(__git_ps1 "(%s)") \[\033[01;34m\]\$\[\033[00m\] '
 fi
 if [ -f /run/.containerenv ] && [ -f /run/.toolboxenv ]; then
@@ -82,5 +82,5 @@ complete -cf sudo
 complete -cf killall
 
 # Editor.
-EDITOR='vi -e'
-VISUAL='vi'
+export EDITOR='vi -e'
+export VISUAL='vi'
