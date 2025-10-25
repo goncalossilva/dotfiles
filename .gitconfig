@@ -37,10 +37,10 @@
 [rerere]
     enabled = true
 [filter "lfs"]
-    smudge = git-lfs smudge -- %f
-    required = true
-    clean = git-lfs clean -- %f
-    process = git-lfs filter-process
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
 [remote "origin"]
     prune = true
 [credential]
@@ -48,6 +48,10 @@
     helper = osxkeychain
     helper = cache
 [alias]
+    br = branch
+    co = checkout
+    ci = commit
+    st = status
     branchprune = "!f() { \
         set -e; \
         MAIN="${1:-main}"; \
