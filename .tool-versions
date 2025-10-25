@@ -1,7 +1,7 @@
 java temurin-17.0.14+7
 kotlin 2.1.10
 python 3.11.11
-nodejs 22.13.1
+nodejs 22.18.0
 golang 1.23.6
 rust 1.84.1
 
