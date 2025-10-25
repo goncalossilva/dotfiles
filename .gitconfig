@@ -3,9 +3,8 @@
     email = goncalossilva@gmail.com
     signingkey = FCE7261799167E4B
 [core]
-    ignorecase = true
     editor = "vim"
-    excludesfile = /home/goncalossilva/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [init]
     defaultBranch = main
 [fetch]
