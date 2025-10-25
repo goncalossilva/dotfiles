@@ -1,5 +1,5 @@
 cpuspeed() {
-  cat /proc/cpuinfo | awk '/cpu MHz\s+:\s/{print $(NF)}' | sort -nr | head -n1
+  awk '/cpu MHz\s+:\s/{print $(NF)}' /proc/cpuinfo | sort -nr | head -n1
 }
 
 gitg() { 
