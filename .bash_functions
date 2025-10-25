@@ -1,7 +1,7 @@
 findlocal() {
-  find $@ ! -fstype nfs
+  find "$@" ! -fstype nfs
 }
 
 srt() {
-  subliminal download -l en $1
+  subliminal download -l en "$1"
 }
