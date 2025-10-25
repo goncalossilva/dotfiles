@@ -29,7 +29,11 @@ case "$OS_TYPE" in
   source_if_exists "$HOME/.bash_functions.macos"
   ;;
 esac
-for f in ~/.bash_autocompletions/*; do . $f; done
+if [ -d ~/.bash_autocompletions ]; then
+  for f in ~/.bash_autocompletions/*; do
+    [ -f "$f" ] && . "$f"
+  done
+fi
 
 # Source z, fzf, and combine them.
 source_if_exists "$HOME/.z.sh"

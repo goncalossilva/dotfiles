@@ -1,5 +1,9 @@
 # Load Homebrew completions.
-for f in /opt/homebrew/etc/bash_completion.d/*; do . $f; done
+if [ -d /opt/homebrew/etc/bash_completion.d ]; then
+  for f in /opt/homebrew/etc/bash_completion.d/*; do
+    [ -f "$f" ] && . "$f"
+  done
+fi
 
 # iTerm2 shell integration.
 [ -f ~/.iterm2_shell_integration.bash ] && \
