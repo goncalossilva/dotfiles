@@ -5,9 +5,10 @@ Reusable agent harness shared across Codex and Claude.
 ## Layout
 
 - `skills/`: Shared skill source of truth (each skill is a folder with `SKILL.md` + optional `scripts/`, `references/`, `assets/`)
+- `AGENTS.md`: Shared base instructions (synced into both agent folders)
 - `bin/`: Helper scripts (not loaded as skills)
 
-## Syncing skills to Codex + Claude
+## Syncing to Codex + Claude
 
 Codex and Claude load skills from their own folders:
 
@@ -17,6 +18,11 @@ Codex and Claude load skills from their own folders:
 Codex currently ignores symlinked skill directories, so skills are **copied** from `~/.agents/skills/` into both agent folders using:
 
 - `~/.agents/bin/sync-agent-skills`
+
+The shared `AGENTS.md` is also synced:
+
+- Codex: `~/.codex/AGENTS.md`
+- Claude: `~/.claude/CLAUDE.md`
 
 Typical sync:
 
