@@ -51,6 +51,11 @@ source_if_exists "$HOME/.asdf/asdf.sh"
 source_if_exists "$HOME/.asdf/completions/asdf.bash"
 source_if_exists "$HOME/.asdf/plugins/java/set-java-home.bash"
 
+# Ghostty shell integration.
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
+
 # Comand prompt.
 PS1='\[\033[01;34m\]\w \$\[\033[00m\] '
 if [ "$(type -t __git_ps1)" ]; then
