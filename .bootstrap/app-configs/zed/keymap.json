@@ -1,0 +1,29 @@
+[
+  // Open each search in a new pane.
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-shift-f": "workspace::NewSearch"
+    }
+  },
+  // Use `alt+tab` to accept prediction
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-tab": "editor::AcceptEditPrediction"
+    }
+  },
+  // Bind `tab` back to its original behavior.
+  {
+    "context": "Editor",
+    "bindings": {
+      "tab": "editor::Tab"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ComposeCompletion"
+    }
+  },
+]

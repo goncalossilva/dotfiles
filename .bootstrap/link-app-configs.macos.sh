@@ -7,6 +7,14 @@ main() {
   link_file \
     "$BOOTSTRAP_DIR/app-configs/ghostty/config" \
     "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+
+  link_file \
+    "$BOOTSTRAP_DIR/app-configs/zed/settings.json" \
+    "$HOME/.config/zed/settings.json"
+
+  link_file \
+    "$BOOTSTRAP_DIR/app-configs/zed/keymap.json" \
+    "$HOME/.config/zed/keymap.json"
 }
 
 link_file() {

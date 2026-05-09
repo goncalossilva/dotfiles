@@ -1,0 +1,164 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+ "session": {
+  "trust_all_worktrees": true
+ },
+ "cli_default_open_behavior": "new_window",
+ "project_panel": {
+  "dock": "left"
+ },
+ "outline_panel": {
+  "dock": "right"
+ },
+ "git_panel": {
+  "dock": "right"
+ },
+ "diff_view_style": "unified",
+ "agent_servers": {
+  "pi-acp": {
+   "type": "registry"
+  }
+ },
+ "sticky_scroll": {
+  "enabled": true
+ },
+ "edit_predictions": {
+  "provider": "copilot"
+ },
+ "collaboration_panel": {
+		"dock": "right",
+  "button": false
+	},
+	"context_servers": {},
+	"agent": {
+		"dock": "left",
+  "tool_permissions": {
+   "default": "allow"
+  },
+  "play_sound_when_agent_done": "always",
+		"single_file_review": false,
+		"inline_assistant_model": {
+			"provider": "zed.dev",
+			"model": "claude-opus-4-5"
+		},
+		"profiles": {
+			"write": {
+				"name": "Write",
+				"tools": {
+					"search_web": true,
+                    "copy_path": true,
+					"create_directory": true,
+					"create_file": true,
+					"delete_path": true,
+					"diagnostics": true,
+					"edit_file": true,
+					"fetch": true,
+					"list_directory": true,
+					"move_path": true,
+					"now": true,
+					"find_path": true,
+					"read_file": true,
+					"grep": true,
+					"terminal": true,
+					"thinking": true
+				},
+				"enable_all_context_servers": true,
+				"context_servers": {
+					"mcp-server-context7": {
+						"tools": {
+							"get-library-docs": true
+						}
+					}
+				}
+			}
+		},
+		"default_profile": "write",
+		"default_model": {
+			"provider": "copilot_chat",
+			"model": "gpt-5-mini"
+		}
+	},
+	"autosave": "on_focus_change",
+	"buffer_font_family": "JetBrains Mono",
+	"buffer_font_features": {
+		"calt": false
+	},
+	"buffer_font_size": 12,
+	"formatter": {
+		"language_server": {
+			"name": "biome"
+		}
+	},
+	"languages": {
+    "Kotlin": {
+      "language_servers": ["kotlin-lsp"]
+    },
+		"Python": {
+			"language_servers": ["basedpyright", "ruff"],
+			"format_on_save": "on",
+			"formatter": [
+				{ "code_action": "source.organizeImports.ruff" },
+				{ "code_action": "source.fixAll.ruff" },
+				{
+					"language_server": {
+						"name": "ruff"
+					}
+				}
+			]
+		},
+		"TOML": {
+			"tab_size": 2
+		},
+		"HTML": {
+			"formatter": "language_server"
+		}
+	},
+	"lsp": {
+		"taplo": {
+			"settings": {
+				"align_comments": false
+			}
+		},
+		"basedpyright": {
+			"settings": {
+				"exclude": [".venv", "runtime"],
+				"basedpyright.analysis": {
+					"diagnosticMode": "workspace",
+					"typeCheckingMode": "recommended"
+				},
+				"python": {
+					"pythonPath": ".venv/bin/python"
+				}
+			}
+		},
+		"vtsls": {
+			"settings": {
+				"typescript": {
+					"preferences": {
+						"importModuleSpecifier": "relative"
+					}
+				}
+			}
+		},
+		"biome": {
+			"settings": {
+				"require_config_file": true
+			}
+		}
+	},
+	"show_call_status_icon": false,
+	"theme": {
+		"mode": "dark",
+		"light": "One Light",
+		"dark": "One Dark Pro"
+	},
+	"ui_font_size": 16,
+	"tab_size": 4
+}
