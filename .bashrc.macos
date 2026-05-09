@@ -5,10 +5,5 @@ if [ -d /opt/homebrew/etc/bash_completion.d ]; then
   done
 fi
 
-# iTerm2 shell integration.
-[ -f ~/.iterm2_shell_integration.bash ] && \
-  export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES && \
-  . ~/.iterm2_shell_integration.bash
-
 # Add $HOME/.local/bin to PATH.
 export PATH="$PATH:$HOME/.local/bin"

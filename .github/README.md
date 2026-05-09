@@ -9,7 +9,7 @@ Nothing is assumed to be installed, but the following are sourced if present:
 * [rupa/z](https://github.com/rupa/z) from `~/.z.sh`
 * [junegunn/fzf](https://github.com/junegunn/fzf) from `~/.fzf.bash`
 * [asdf-vm/asdf](https://github.com/asdf-vm/asdf) and completions from the default locations
-* [Ghostty](https://ghostty.org/docs/features/shell-integration)'s (macOS / Linux) and [iTerm2](https://iterm2.com/documentation-shell-integration.html)'s (macOS) shell integration
+* [Ghostty](https://ghostty.org/docs/features/shell-integration)
 
 ## Setup
 
