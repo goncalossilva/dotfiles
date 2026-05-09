@@ -1,3 +1,7 @@
+source_if_exists() {
+  [ -f "$1" ] && . "$1"
+}
+
 # Load Homebrew completions.
 if [ -d /opt/homebrew/etc/bash_completion.d ]; then
   for f in /opt/homebrew/etc/bash_completion.d/*; do
@@ -7,3 +11,6 @@ fi
 
 # Add $HOME/.local/bin to PATH.
 export PATH="$PATH:$HOME/.local/bin"
+
+# Source z from Homebrew.
+source_if_exists "$HOMEBREW_PREFIX/etc/profile.d/z.sh"

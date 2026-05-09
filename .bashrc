@@ -37,7 +37,7 @@ fi
 
 # Source z, fzf, and combine them.
 source_if_exists "$HOME/.z.sh"
-source_if_exists "$HOME/.fzf.bash"
+eval "$(fzf --bash)"
 if type z &> /dev/null && type fzf &> /dev/null; then
   unalias z 2> /dev/null
   function z() {
