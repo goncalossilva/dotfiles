@@ -1,0 +1,179 @@
+{
+  "BTTPresetCreatorNotes" : "",
+  "BTTPresetInfoURL" : "",
+  "BTTPresetName" : "Default",
+  "BTTPresetColor" : "69.385500, 229.500000, 20.655000, 255.000000",
+  "BTTPresetUUID" : "42E2C1E7-B475-4168-8A6E-C431CE13C587",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTAppSpecificSettings" : {
+        "BTTDisableGlobalTriggers" : false
+      },
+      "BTTTriggers" : [
+        {
+          "BTTLastUpdatedAt" : 1778291355.376123,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "6FC4B58F-6D9E-403D-A317-DD68FF1A138C",
+          "BTTPredefinedActionType" : 152,
+          "BTTPredefinedActionName" : "Move Window One Space or Desktop Right",
+          "BTTAdditionalConfiguration" : "10092586",
+          "BTTShortcutKeyboardType" : 3468,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "RIGHT",
+          "BTTShortcutKeyCode" : 124,
+          "BTTShortcutAdvancedModifierKeys" : "10092586",
+          "BTTShortcutModifierKeys" : 10092544,
+          "BTTOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTLastUpdatedAt" : 1755690597.5803881,
+          "BTTTriggerType" : 624,
+          "BTTTriggerTypeDescriptionReadOnly" : "Please Select a Trigger ",
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTUUID" : "46A4065D-5C44-4786-9909-BB5B3593E6AD",
+          "BTTLayoutIndependentActionChar" : "DELETE",
+          "BTTShortcutToSend" : "59,58,56,55,51",
+          "BTTOrder" : 0,
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.29999999999999999,
+            "BTTKeyCount" : 2,
+            "BTTKeyboardType" : 3468,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCharacter" : "⌃",
+                "BTTKEYCode" : 59,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCharacter" : "⌃",
+                "BTTKEYCode" : 59,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1
+              },
+              {
+                "BTTKEYCharacter" : "⌃",
+                "BTTKEYCode" : 59,
+                "BTTKEYRequired" : 1
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCharacter" : "⌃",
+                "BTTKEYCode" : 59,
+                "BTTKEYRequired" : 1
+              }
+            ]
+          }
+        },
+        {
+          "BTTLastUpdatedAt" : 1778267909.32581,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "1CD3A83F-F064-442B-B38B-D08C116B030C",
+          "BTTAdditionalConfiguration" : "1179658",
+          "BTTShortcutKeyboardType" : 2302,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "6",
+          "BTTShortcutKeyCode" : 22,
+          "BTTShortcutAdvancedModifierKeys" : "1179658",
+          "BTTShortcutModifierKeys" : 1179648,
+          "BTTOrder" : 3,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTActionsToExecute" : [
+            {
+              "BTTLastUpdatedAt" : 1778267942.495266,
+              "BTTTriggerParentUUID" : "1CD3A83F-F064-442B-B38B-D08C116B030C",
+              "BTTIsPureAction" : true,
+              "BTTUUID" : "16B1025C-0682-4A1D-A365-8301671B74EC",
+              "BTTPredefinedActionType" : 169,
+              "BTTPredefinedActionName" : "Capture Screenshot (Configurable)",
+              "BTTScreenshotOptions" : "-i;;-U;;-t;;png;;BTTAdditionallyCopyToClipboard;;BTTDontCopyPath;;/Users/goncalossilva/Pictures/Screenshots/Screenshot_{datetime}_{random}.png;;",
+              "BTTScreenshotDateFormat" : "yyyy-MM-dd HH.mm.ss",
+              "BTTOrder" : 12
+            }
+          ]
+        },
+        {
+          "BTTLastUpdatedAt" : 1755690647.763314,
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTUUID" : "077CC87C-5CF8-4B73-A57C-75F261B07ECB",
+          "BTTOrder" : 0
+        },
+        {
+          "BTTLastUpdatedAt" : 1778267903.282203,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "3F04D1C2-E0DE-4E8C-830D-E1FDED478225",
+          "BTTAdditionalConfiguration" : "1179658",
+          "BTTShortcutKeyboardType" : 2302,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "5",
+          "BTTShortcutKeyCode" : 23,
+          "BTTShortcutAdvancedModifierKeys" : "1179658",
+          "BTTShortcutModifierKeys" : 1179648,
+          "BTTOrder" : 2,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTActionsToExecute" : [
+            {
+              "BTTLastUpdatedAt" : 1778267779.576071,
+              "BTTTriggerParentUUID" : "3F04D1C2-E0DE-4E8C-830D-E1FDED478225",
+              "BTTIsPureAction" : true,
+              "BTTUUID" : "2266E011-A33C-4DE0-8EA4-F58B2D35639B",
+              "BTTPredefinedActionType" : 169,
+              "BTTPredefinedActionName" : "Capture Screenshot (Configurable)",
+              "BTTScreenshotOptions" : "-i;;-t;;png;;BTTAdditionallyCopyToClipboard;;BTTDontCopyPath;;/Users/goncalossilva/Pictures/Screenshots/Screenshot_{datetime}_{random}.png;;",
+              "BTTScreenshotDateFormat" : "yyyy-MM-dd HH.mm.ss",
+              "BTTOrder" : 10
+            }
+          ]
+        },
+        {
+          "BTTLastUpdatedAt" : 1778291355.3761349,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "5A1B210B-60A3-4E96-AACE-6B4C217068FB",
+          "BTTPredefinedActionType" : 151,
+          "BTTPredefinedActionName" : "Move Window One Space or Desktop Left",
+          "BTTAdditionalConfiguration" : "10092586",
+          "BTTShortcutKeyboardType" : 3468,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "LEFT",
+          "BTTShortcutKeyCode" : 123,
+          "BTTShortcutAdvancedModifierKeys" : "10092586",
+          "BTTShortcutModifierKeys" : 10092544,
+          "BTTOrder" : 1,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "BT.L",
+      "BTTAppName" : "Recently Used",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}

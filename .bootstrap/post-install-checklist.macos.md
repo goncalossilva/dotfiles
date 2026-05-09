@@ -53,3 +53,8 @@ Manual/source-specific fonts:
 
 - Segoe UI fonts found in `~/Library/Fonts` on the audited machine.
 - RODE Noto fonts found in `/Library/Fonts`; these likely came from RODE software.
+
+BetterTouchTool:
+
+- Use Manage Presets → Export/Import for portable presets.
+- Do not track raw `~/Library/Application Support/BetterTouchTool` data stores, licenses, clipboard databases, logs, or preference plists.

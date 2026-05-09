@@ -27,6 +27,20 @@ main() {
   link_file \
     "$BOOTSTRAP_DIR/app-configs/gnupg/gpg.conf" \
     "$HOME/.gnupg/gpg.conf"
+
+  import_bettertouchtool_preset "$BOOTSTRAP_DIR/app-configs/bettertouchtool/Default.bttpreset"
+}
+
+import_bettertouchtool_preset() {
+  local preset="$1"
+  local encoded_preset=""
+
+  if [ ! -f "$preset" ]; then
+    return
+  fi
+
+  encoded_preset="$(python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.argv[1]))' "$preset")"
+  open "btt://import_preset/?path=$encoded_preset&replaceExisting=1"
 }
 
 link_file() {
