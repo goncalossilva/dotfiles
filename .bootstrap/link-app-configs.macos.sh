@@ -19,6 +19,14 @@ main() {
   link_file \
     "$BOOTSTRAP_DIR/app-configs/linearmouse/linearmouse.json" \
     "$HOME/.config/linearmouse/linearmouse.json"
+
+  link_file \
+    "$BOOTSTRAP_DIR/app-configs/gnupg/gpg-agent.conf" \
+    "$HOME/.gnupg/gpg-agent.conf"
+
+  link_file \
+    "$BOOTSTRAP_DIR/app-configs/gnupg/gpg.conf" \
+    "$HOME/.gnupg/gpg.conf"
 }
 
 link_file() {
