@@ -15,6 +15,10 @@ main() {
   link_file \
     "$BOOTSTRAP_DIR/app-configs/zed/keymap.json" \
     "$HOME/.config/zed/keymap.json"
+
+  link_file \
+    "$BOOTSTRAP_DIR/app-configs/linearmouse/linearmouse.json" \
+    "$HOME/.config/linearmouse/linearmouse.json"
 }
 
 link_file() {
