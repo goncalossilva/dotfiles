@@ -29,6 +29,14 @@ System Settings to verify manually:
   - `sudo xcodebuild -license accept`
   - `sudo xcodebuild -runFirstLaunch`
 
+SSH:
+
+- After restoring `~/.ssh/id_rsa`, load it into the macOS keychain-backed agent:
+  - `ssh-add --apple-use-keychain ~/.ssh/id_rsa`
+  - `ssh-add -l`
+  - `ssh -T git@github.com`
+- This lets Git/SSH use `SSH_AUTH_SOCK` instead of reading private keys directly.
+
 Dock layout is not automated. Pinned apps from the audited machine:
 
 - Firefox
