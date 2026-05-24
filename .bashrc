@@ -90,8 +90,3 @@ complete -cf killall
 export EDITOR='vi -e'
 export VISUAL='vi'
 
-# GPG signing.
-if [ -t 0 ]; then
-  GPG_TTY=$(tty)
-  export GPG_TTY
-fi

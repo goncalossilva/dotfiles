@@ -1,7 +1,7 @@
 [user]
     name = Gonçalo Silva
     email = goncalossilva@gmail.com
-    signingkey = FCE7261799167E4B
+    signingkey = ~/.ssh/id_ed25519_signing.pub
 [core]
     editor = "vim"
     excludesfile = ~/.gitignore_global
@@ -15,6 +15,8 @@
     recurse = true
 [commit]
     gpgsign = true
+[gpg]
+    format = ssh
 [push]
     autoSetupRemote = true
     followTags = true
@@ -22,6 +24,7 @@
     sort = committerdate
 [tag]
     sort = taggerdate
+    gpgSign = true
 [status]
     submoduleSummary = true
 [diff]
