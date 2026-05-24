@@ -20,7 +20,7 @@
  "git_panel": {
   "dock": "right"
  },
- "diff_view_style": "unified",
+ "diff_view_style": "split",
  "agent_servers": {
   "pi-acp": {
    "type": "registry"
