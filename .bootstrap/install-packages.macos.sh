@@ -3,14 +3,11 @@ set -euo pipefail
 
 BOOTSTRAP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BREWFILE="$BOOTSTRAP_DIR/Brewfile.macos"
-NPM_GLOBALS="$BOOTSTRAP_DIR/npm-globals.txt"
 
 main() {
   install_homebrew
   configure_homebrew_for_this_shell
   brew bundle --file "$BREWFILE"
-  "$BOOTSTRAP_DIR/asdf.sh"
-  install_npm_globals
 }
 
 install_homebrew() {
@@ -33,19 +30,6 @@ configure_homebrew_for_this_shell() {
   fi
 
   eval "$($brew_bin shellenv)"
-}
-
-install_npm_globals() {
-  if [ ! -s "$NPM_GLOBALS" ]; then
-    return
-  fi
-
-  if ! command -v npm >/dev/null 2>&1; then
-    echo "npm not found; skipping global npm packages." >&2
-    return
-  fi
-
-  grep -vE '^($|#)' "$NPM_GLOBALS" | xargs npm install -g
 }
 
 main "$@"

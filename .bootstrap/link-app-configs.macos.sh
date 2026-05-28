@@ -5,6 +5,10 @@ BOOTSTRAP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 main() {
   link_file \
+    "$BOOTSTRAP_DIR/app-configs/shell/profile" \
+    "$HOME/.profile"
+
+  link_file \
     "$BOOTSTRAP_DIR/app-configs/ghostty/config" \
     "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 

@@ -2,6 +2,7 @@
 set -euo pipefail
 
 main() {
+  configure_login_shell
   configure_keyboard
   configure_trackpad
   configure_finder
@@ -9,6 +10,39 @@ main() {
   configure_menu_bar
   configure_textedit
   restart_affected_apps
+}
+
+configure_login_shell() {
+  set_default_shell /bin/bash
+}
+
+set_default_shell() {
+  local desired_shell="$1"
+  local current_shell=""
+
+  if [ ! -x "$desired_shell" ]; then
+    echo "Default shell does not exist or is not executable: $desired_shell" >&2
+    exit 1
+  fi
+
+  current_shell="$(current_login_shell)"
+
+  if [ "$current_shell" = "$desired_shell" ]; then
+    echo "Default shell is already $desired_shell"
+    return
+  fi
+
+  if [ -n "$current_shell" ]; then
+    echo "Changing default shell from $current_shell to $desired_shell"
+  else
+    echo "Changing default shell to $desired_shell"
+  fi
+
+  chsh -s "$desired_shell"
+}
+
+current_login_shell() {
+  dscl . -read "/Users/$(id -un)" UserShell 2>/dev/null | awk '/UserShell:/ { print $2 }'
 }
 
 configure_keyboard() {

@@ -16,7 +16,6 @@ System Settings to verify manually:
   - Screen & System Audio Recording: BetterTouchTool, Chromium, Firefox, Supercut
   - System Audio Recording Only: Granola
   - Full Disk Access: AppCleaner, terminal/editor/sync tools if needed.
-- Users & Groups → (right-click) Advanced Options: set login shell to bash
 - Tailscale system extension/kernel extension approval if macOS asks for it.
 
 SSH:
@@ -26,6 +25,17 @@ SSH:
   - `ssh-add -l`
   - `ssh -T git@github.com`
 - This lets Git/SSH use `SSH_AUTH_SOCK` instead of reading private keys directly.
+
+Firefox:
+
+- Sign in to Firefox Sync; it will restore synced settings and extensions.
+
+Resilio Sync:
+
+- Set these power user preferences manually after first launch:
+  - `log_size`: `1`
+  - `log_ttl`: `1`
+  - `disk_low_priority`: `true`
 
 Dock layout is not automated. Pinned apps:
 
