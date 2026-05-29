@@ -9,6 +9,7 @@ Install manually or via the App Store:
 
 System Settings to verify manually:
 
+- Keyboard shortcuts, Services shortcuts, and Accessibility → Zoom are imported by bootstrap. If they do not appear immediately, log out and back in.
 - Keyboard → Keyboard Shortcuts → Modifier Keys: map Caps Lock to Control for each keyboard.
 - Keyboard → Input Sources: enable `USInternational-PC` and keep/remove `U.S.` as desired.
 - Privacy & Security permissions:

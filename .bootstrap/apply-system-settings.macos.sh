@@ -9,6 +9,7 @@ main() {
   configure_dock
   configure_menu_bar
   configure_textedit
+  import_system_preferences
   restart_affected_apps
 }
 
@@ -89,8 +90,44 @@ configure_textedit() {
   defaults write com.apple.TextEdit RichText -bool false
 }
 
+import_system_preferences() {
+  import_preference_domain \
+    com.apple.symbolichotkeys \
+    "$HOME/.bootstrap/app-configs/macos-preferences/com.apple.symbolichotkeys.plist"
+
+  import_preference_domain \
+    pbs \
+    "$HOME/.bootstrap/app-configs/macos-preferences/pbs.plist"
+
+  import_preference_domain \
+    com.apple.universalaccess \
+    "$HOME/.bootstrap/app-configs/macos-preferences/com.apple.universalaccess.plist"
+}
+
+import_preference_domain() {
+  local domain="$1"
+  local source="$2"
+
+  if [ ! -f "$source" ]; then
+    echo "Skipping missing preferences for $domain: $source"
+    return
+  fi
+
+  defaults import "$domain" "$source"
+  echo "Imported preferences for $domain"
+}
+
 restart_affected_apps() {
-  killall Finder Dock SystemUIServer 2>/dev/null || true
+  killall \
+    cfprefsd \
+    Finder \
+    Dock \
+    SystemUIServer \
+    pbs \
+    universalaccessd \
+    AccessibilityUIServer \
+    AccessibilityVisualsAgent \
+    2>/dev/null || true
 }
 
 main "$@"
