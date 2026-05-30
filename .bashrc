@@ -47,8 +47,8 @@ if type z &> /dev/null && type fzf &> /dev/null; then
 fi
 
 # Source and setup asdf.
-source_if_exists "$HOME/.asdf/asdf.sh"
-source_if_exists "$HOME/.asdf/completions/asdf.bash"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+. <(asdf completion bash)
 source_if_exists "$HOME/.asdf/plugins/java/set-java-home.bash"
 
 # Ghostty shell integration.
@@ -89,4 +89,3 @@ complete -cf killall
 # Editor.
 export EDITOR='vi -e'
 export VISUAL='vi'
-
