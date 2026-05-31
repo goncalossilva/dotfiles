@@ -71,6 +71,21 @@ configure_finder() {
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
   defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
   defaults write com.apple.finder ShowRecentTags -bool false
+
+  delete_finder_tags
+}
+
+delete_finder_tags() {
+  local synced_preferences="$HOME/Library/SyncedPreferences/com.apple.finder.plist"
+
+  defaults write com.apple.finder FavoriteTagNames -array
+
+  if [ -f "$synced_preferences" ]; then
+    /usr/libexec/PlistBuddy \
+      -c "Delete :values:FinderTagDict:value:FinderTags" \
+      "$synced_preferences" \
+      2>/dev/null || true
+  fi
 }
 
 configure_dock() {
@@ -123,6 +138,7 @@ restart_affected_apps() {
     Finder \
     Dock \
     SystemUIServer \
+    sharedfilelistd \
     pbs \
     universalaccessd \
     AccessibilityUIServer \
