@@ -1,7 +1,7 @@
 [user]
     name = Gonçalo Silva
     email = goncalossilva@gmail.com
-    signingkey = ~/.ssh/id_ed25519_signing.pub
+    signingkey = ~/.ssh/id_rsa.pub
 [core]
     editor = "vim"
     excludesfile = ~/.gitignore_global

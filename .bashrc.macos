@@ -14,3 +14,8 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Source z from Homebrew.
 source_if_exists "$HOMEBREW_PREFIX/etc/profile.d/z.sh"
+
+# Load SSH identities into ssh-agent on interactive shells.
+if [[ $- == *i* ]] && [[ -S "${SSH_AUTH_SOCK:-}" ]]; then
+  ssh-add -T ~/.ssh/id_rsa.pub >/dev/null 2>&1 || ssh-add -q --apple-load-keychain ~/.ssh/id_rsa
+fi
