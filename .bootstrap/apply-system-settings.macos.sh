@@ -5,6 +5,7 @@ main() {
   configure_login_shell
   configure_keyboard
   configure_trackpad
+  configure_sound
   configure_finder
   configure_dock
   configure_menu_bar
@@ -65,6 +66,10 @@ configure_trackpad() {
   defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -bool true
   defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 2
   defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 2
+}
+
+configure_sound() {
+  defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 1
 }
 
 configure_finder() {
